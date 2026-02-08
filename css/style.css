@@ -1,0 +1,115 @@
+:root {
+    --bg-url: url('../img/background.png');
+    --glass: rgba(255, 255, 255, 0.1);
+    --border: rgba(255, 255, 255, 0.2);
+    --accent: #a29bfe;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-url) no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    height: 100-vh;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 40px; 
+    backdrop-filter: blur(5px);
+}
+
+#clock {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+main {
+    padding: 0 40px;
+}
+
+h2 {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+/* ANIMATION DES BOUTONS */
+.card {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.info .title {
+    display: block;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.info .subtitle {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px; /* Espace après tes boutons */
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4); /* Gris transparent très discret */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+/* Petit effet au survol */
+footer p:hover {
+    color: var(--accent); /* Ton bleu/violet s'allumera au survol */
+    cursor: default;
+}
