@@ -113,3 +113,53 @@ footer p:hover {
     color: var(--accent); /* Ton bleu/violet s'allumera au survol */
     cursor: default;
 }
+
+/* Style du point en haut à droite */
+.status-dot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #666; /* Gris par défaut (chargement) */
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Couleurs selon l'état */
+.status-dot.online {
+    background-color: #2ecc71; /* Vert */
+    box-shadow: 0 0 8px #2ecc71;
+    animation: pulse-green 2s infinite;
+}
+
+.status-dot.offline {
+    background-color: #e74c3c; /* Rouge */
+    box-shadow: 0 0 8px #e74c3c;
+    animation: pulse-red 3s infinite;
+}
+
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+    }
+}
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+    }
+}
